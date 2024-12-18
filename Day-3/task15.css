@@ -1,0 +1,23 @@
+.container{
+    background-color: antiquewhite;
+    height:520px;
+    width: 370px;
+}
+
+#display{
+    background-color: white;
+    height: 100px;
+    width: 320px;
+    margin:20px;
+    font-size: 50px;
+    text-align: right;
+}
+
+td{
+    /* padding:30px 40px 40px 40px; */
+    border:1px solid black;
+}
+
+button{
+    padding: 30px;
+}

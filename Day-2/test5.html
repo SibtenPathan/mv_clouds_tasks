@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+    <style>
+        * {
+            margin-top: 20px;
+        }
+
+        #main {
+            /* width: 500px; */
+            margin-top: -40px;
+        }
+
+        #radio {
+            margin-left: 5px;
+        }
+        #gender{
+            padding-right: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <form action="" id=registrationForm>
+            <label for="username">Username: </label>
+            <input type="text" id="username">
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <br>
+
+            <label>Gender:</label>
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <br>
+
+            <label for="">Dropdown Menu: </label>
+            <select id="menu">
+                <option value="opt1">opt1</option>
+                <option value="opt2">opt2</option>
+                <option value="opt3">opt3</option>
+            </select>
+            <br>
+
+            <button type="submit" onclick="formSubmit()" sendMessage()>Submit</button>
+
+        </form>
+    </div>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByu4nhdR01FArlUX1N3WqI89lT1roWKos",
+            authDomain: "first-form-c1e24.firebaseapp.com",
+            projectId: "first-form-c1e24",
+            storageBucket: "first-form-c1e24.firebasestorage.app",
+            messagingSenderId: "566911902808",
+            appId: "1:566911902808:web:b3c90816850bf74d33962d"
+        };
+
+         // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+        // document.getElementById('registrationForm').addEventListener('submit',formSubmit)
+
+        function formSubmit(e){
+            e.preventDefault();
+            username = document.getElementById('username').value;
+            password = document.getElementById('password').value;
+            gender = document.getElementById("gender").value;
+            opt = document.getElementById("menu")
+            console.log('1  ')
+            sendMessage(username, password, gender, opt)
+        }
+
+        function sendMessage(username, password, gender, opt){
+            const database = getDatabase();
+
+            set(ref(database, 'users/'+username),{
+                username:username,
+                password:password,
+                gender:gender,
+                opt:opt
+            }).then(()=>{
+                console.log('data set')
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+    </script>
+</body>
+
+</html>

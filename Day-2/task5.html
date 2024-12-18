@@ -19,7 +19,8 @@
         #radio {
             margin-left: 5px;
         }
-        #gender{
+
+        #gender {
             padding-right: 7px;
         }
     </style>
@@ -27,7 +28,7 @@
 
 <body>
     <div id="main">
-        <form action="">
+        <form action="" id="details">
             <label for="username">Username: </label>
             <input type="text" id="username">
             <br>
@@ -53,31 +54,48 @@
             </select>
             <br>
 
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="submitForm()">Submit</button>
 
         </form>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
+    <script>
         const firebaseConfig = {
-          apiKey: "AIzaSyCBqsmMxEpdjrs5zolyFNLueLERbQYh8aw",
-          authDomain: "form-data-58a85.firebaseapp.com",
-          projectId: "form-data-58a85",
-          storageBucket: "form-data-58a85.firebasestorage.app",
-          messagingSenderId: "579108983014",
-          appId: "1:579108983014:web:247bdcbbd0419b34de6b27"
+            apiKey: "AIzaSyByu4nhdR01FArlUX1N3WqI89lT1roWKos",
+            authDomain: "first-form-c1e24.firebaseapp.com",
+            projectId: "first-form-c1e24",
+            storageBucket: "first-form-c1e24.firebasestorage.app",
+            messagingSenderId: "566911902808",
+            appId: "1:566911902808:web:b3c90816850bf74d33962d"
         };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-      </script>
+
+        firebase.initializeApp(firebaseConfig);
+
+        function submitForm(){
+            firebase.database().ref("User").set({
+            username: document.getElementById("username").value,
+            password: document.getElementById ("password").value
+        });
+        }
+    </script>
+
 </body>
 
 </html>
+
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+import { getDatabase, ref, set } from firebase / database;
+// Your web app's Firebase configuration
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
