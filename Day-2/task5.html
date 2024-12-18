@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-5</title>
+    <style>
+        * {
+            margin-top: 20px;
+        }
+
+        #main {
+            /* width: 500px; */
+            margin-top: -40px;
+        }
+
+        #radio {
+            margin-left: 5px;
+        }
+
+        #gender {
+            padding-right: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <form action="" id="details">
+            <label for="username">Username: </label>
+            <input type="text" id="username">
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <br>
+
+            <label for="gender" id="gender">Gender:</label>
+
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+
+            <br>
+
+            <label for="menu">Dropdown Menu: </label>
+            <select>
+                <option value="opt1">opt1</option>
+                <option value="opt2">opt2</option>
+                <option value="opt3">opt3</option>
+            </select>
+            <br>
+
+            <button type="submit" onclick="submitForm()">Submit</button>
+
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyByu4nhdR01FArlUX1N3WqI89lT1roWKos",
+            authDomain: "first-form-c1e24.firebaseapp.com",
+            projectId: "first-form-c1e24",
+            storageBucket: "first-form-c1e24.firebasestorage.app",
+            messagingSenderId: "566911902808",
+            appId: "1:566911902808:web:b3c90816850bf74d33962d"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        function submitForm(){
+            firebase.database().ref("User").set({
+            username: document.getElementById("username").value,
+            password: document.getElementById ("password").value
+        });
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+import { getDatabase, ref, set } from firebase / database;
+// Your web app's Firebase configuration
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
