@@ -15,32 +15,54 @@
         </div>
 
         <div class="buttons">
-            <table>
-                <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button>/</button></td>
-                </tr>
-                <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button>*</button></td>
-                </tr>
-                <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td><button></button></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="width: 40px;" !important ><button>0</button></td>
-                    <td><button><bold>.</bold></button></td>
-                    <td><button>+</button></td>
-                </tr>
-            </table>
+            <div style="display: flex;">
+                <button style="margin-left: 15px;" onclick="show('7')">7</button>
+                <button style="margin-left: 17px;" onclick="show('8')">8</button>
+                <button style="margin-left: 19px;" onclick="show('9')">9</button>
+                <div style="margin-left: 12px;">
+                    <button onClick="clear()" style="padding-left: 16px; padding-right: 16px;" class="height">C</button>
+                    <button onClick="show('/')" class="height">/</button>
+                </div>
+
+            </div>
+            <div class="mt">
+                <button onclick="show('4')">4</button>
+                <button onclick="show('5')">5</button>
+                <button onclick="show('6')">6</button>
+                <button onclick="show('*')">*</button>
+
+            </div>
+            <div class="mt">
+                <button onclick="show('1')">1</button>
+                <button onclick="show('2')">2</button>
+                <button onclick="show('3')">3</button>
+                <button onclick="show('-')">-</button>
+
+            </div>
+            <div class="mt">
+                <button onclick="show('0')">0</button>
+                <button onclick="show('.')">.</button>
+                <button onclick="show('+')">+</button>
+                <button onclick="solve()">=</button>
+            </div>
         </div>
     </div>
+
+    <script>
+        function show(val){
+            document.getElementById('display').value += val;
+        }
+
+        function solve(){
+            x = document.getElementById('display').value;
+            ans = eval(x);
+            console.log(ans)
+            document.getElementById('display').value = ans;
+        }
+
+        function clear(){
+            document.getElementById('display').value = "";
+        }
+    </script>
 </body>
 </html>

@@ -6,38 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task-2</title>
-
     <style>
-        
-
-        .headlines{
-            height: 550px;
-            color:aliceblue ;
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 600px;
+            width: 800px;
+            background-color: black;
         }
 
-        #headlines{
-            color: aliceblue;
+        .headlines {
+            color: silver;
+            text-align: center;
+            /* padding-top:10px; */
+            font-size: 30px;
+            background-color: blue;
         }
 
-        .news-text{
-            background-color: antiquewhite;
-            color: blue;
-            font-weight: bolder;
-            font-size:x-large;
+        .video {
+            margin-left: 50px;
+        }
+
+        p {
+            background-color: blue;
+            font-size: 20px;
+            padding: 10px;
+            color: silver;
+            width: max-content;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-
-        <div>
-            <marquee class="news-text" loop="1" direction="">
-                <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima neque a corporis, debitis sit nemo,
-                        delectus officiis quibusdam aut distinctio deleniti quam dolorem, laboriosam obcaecati? Officiis
-                        facere quo iste dicta.</p>
-                </div>
+        <div class="headlines">
+            <h1>headlines</h1>
+        </div>
+        <div class="video">
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/doHYuA4uD7o?autoplay=1&start=10"
+                title="How to Make a News-Style Video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="text">
+            <marquee>
+                <p>Protests over Home Minister Amit Shah's 'Ambedkar is the fashion' remarks turned violent today as
+                    Parliamentarians pushed each other while standing on stairs. Both the BJP and Congress allege that
+                    the other side used force to harass and prevent their rivals from entering the Parliament.</p>
             </marquee>
         </div>
     </div>

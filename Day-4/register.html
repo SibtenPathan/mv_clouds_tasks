@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        .container {
+            background-color: antiquewhite;
+            height: 450px;
+            width: 50%;
+            margin: auto;
+            width: 350px;
+            border: 15px solid aqua;
+            color: brown
+        }
+
+        .loginForm {
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .mt {
+            margin-top: 20px;
+            ;
+        }
+
+        .btn {
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .heading {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .link{
+            margin-left: 10px;
+            width:400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loginForm">
+
+            <div class="heading">
+                <p>Registration Form</p>
+            </div>
+            <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Enter name here" id="name">
+            </div>
+
+            <div class="email mt">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Enter email here" id="email">
+            </div>
+
+            <div class="password mt">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter password here" id="password">
+            </div>
+
+            <div class="phone mt">
+                <label for="phone">Phone:</label>
+                <input type="phone" placeholder="Enter phone here" id="phone">
+            </div>
+
+            <div class="btn mt">
+                <button type="submit" onclick="handleSubmit()">Register</button>
+            </div>
+
+            <div class="link">
+                <a href="login.html">Existing User(Click Here)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            name = document.getElementById('name').value;
+            email = document.getElementById('email').value;
+            password = document.getElementById('password').value;
+            phone = document.getElementById('phone').value;
+
+            console.log(name)
+            console.log(email)
+            console.log(password)
+            console.log(phone)
+
+            localStorage.setItem("name", name)
+            localStorage.setItem("email", email)
+            localStorage.setItem("password", password)
+            localStorage.setItem("phone", phone)
+        }
+    </script>
+</body>
+
+</html>

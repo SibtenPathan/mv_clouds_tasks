@@ -6,46 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task-1</title>
+    <link rel="stylesheet" href="task1.css">
+    <script src="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous"></script>
     <style>
-        * {
-            margin-top: 20px;
-        }
+        
 
-        #main {
-            /* width: 500px; */
-            margin-top: -40px;
-        }
-
-        #radio {
-            margin-left: 5px;
-        }
-        #gender{
-            padding-right: 7px;
-        }
     </style>
 </head>
 
 <body>
-    <div id="main">
-        <form action="" id=registrationForm>
+    <!-- <div id="main">
+        <form id="registrationForm">
             <label for="username">Username: </label>
-            <input type="text" id="username">
+            <input type="text" id="username" required>
             <br>
 
             <label for="password">Password:</label>
-            <input type="password" id="password">
+            <input type="password" id="password" required>
             <br>
 
             <label>Gender:</label>
-
             <input type="radio" id="male" name="gender" value="male">
             <label for="male">Male</label>
             <input type="radio" id="female" name="gender" value="female">
             <label for="female">Female</label>
-
             <br>
 
-            <label for="">Dropdown Menu: </label>
+            <label for="menu">Dropdown Menu: </label>
             <select id="menu">
                 <option value="opt1">opt1</option>
                 <option value="opt2">opt2</option>
@@ -53,14 +40,62 @@
             </select>
             <br>
 
-            <button type="submit" onclick="formSubmit()" sendMessage()>Submit</button>
-
+            <button type="submit">Submit</button>
         </form>
+    </div> -->
+
+
+    <div class="container">
+        <div class="form">
+            <form action="" id="registrationForm">
+                <div class="header flex">
+                    <div class="icon-1">
+                        <i class='fas fa-arrow-alt-circle-right'></i>
+                    </div>
+                    <div>
+                        <h3>Candidate Info</h3>
+                    </div>
+                </div>
+                <div class="name center">
+                    <input type="text" placeholder="Enter your username*" id="username" required>
+                </div>
+                <div class="email center mt">
+                    <input type="email" placeholder="Enter your password*" id="password" required>
+                </div>
+
+                <div class="header">
+                    <h4>Dropdown Menu:</h4>
+                </div>
+                <div class="dropdown center">
+                    <select name="intrest" id="menu">
+                        <option value="Fishing">Fishing</option>
+                        <option value="Singing">Singing</option>
+                        <option value="sports">sports</option>
+                    </select>
+                </div>
+
+                <div class="header">
+                    <h4>Gender:</h4>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="center mt">
+
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
     </div>
+
 
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyByu4nhdR01FArlUX1N3WqI89lT1roWKos",
@@ -71,36 +106,49 @@
             appId: "1:566911902808:web:b3c90816850bf74d33962d"
         };
 
-         // Initialize Firebase
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
 
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', formSubmit);
 
-        // document.getElementById('registrationForm').addEventListener('submit',formSubmit)
+        function formSubmit(e) {
 
-        function formSubmit(e){
             e.preventDefault();
-            username = document.getElementById('username').value;
-            password = document.getElementById('password').value;
-            gender = document.getElementById("gender").value;
-            opt = document.getElementById("menu")
-            console.log('1  ')
-            sendMessage(username, password, gender, opt)
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            let gender = '';
+            if (document.getElementById('male').checked) {
+                gender = 'male';
+            } else if (document.getElementById('female').checked) {
+                gender = 'female';
+            }
+            const selectedOption = document.getElementById('menu').value;
+
+            console.log('Username:', username);
+            console.log('Password:', password);
+            console.log('Gender:', gender);
+            console.log('Selected Option:', selectedOption);
+
+            sendMessage(username, password, gender, selectedOption);
         }
 
-        function sendMessage(username, password, gender, opt){
-            const database = getDatabase();
+        function sendMessage(username, password, gender, selectedOption) {
 
-            set(ref(database, 'users/'+username),{
-                username:username,
-                password:password,
-                gender:gender,
-                opt:opt
-            }).then(()=>{
-                console.log('data set')
-            }).catch((error) => {
-                console.log(error);
+            set(ref(database, 'users/' + username), {
+                username: username,
+                password: password,
+                gender: gender,
+                selectedOption: selectedOption
             })
+                .then(() => {
+                    console.log('Data saved successfully!');
+                })
+                .catch((error) => {
+                    console.error('Error saving data:', error);
+                });
         }
     </script>
 </body>

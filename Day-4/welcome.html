@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        .container{
+            margin:auto;
+            width: 50%;
+            width: 300px;
+            height: 200px;
+            background-color:aqua;
+            text-align: center;
+            font-size:50px;
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="greet"></p>
+    </div>
+
+    <script>
+        name = localStorage.getItem("name");
+        document.getElementById("greet").innerHTML = "Welcome "+name+"!"
+    </script>
+</body>
+</html>

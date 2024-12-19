@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-4</title>
+    <style>
+        .container{
+            background-color: black;
+            width: 50%;
+            margin: auto;
+            width: 1000px;
+            height:600px;
+        }
+
+        .input{
+            background-color: pink;
+            height:250px;
+            margin:auto;
+            width:50%;
+            width:900px;
+        }
+
+        #date{
+            width: 800px;
+            height:150px;
+            font-size: 50px;
+            padding: 20px;
+            margin-left:30px;
+            margin-top:20px;
+            text-align:center;
+        }
+
+        .btn{
+            background-color: brown;
+            color:white;
+            margin:auto;
+            width:50%;
+            margin-left:50px;
+            margin-top: 20px;
+            height:200px;
+            width:800px;
+            font-size:50px;
+        }
+
+        .ans{
+            color: yellow;
+            font-size:80px;
+            text-align:center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- <button onclick="calculate()">Start Timer</button>
+
+    <p id="result"></p> -->
+
+    <div class="container">
+        <div class="input">
+            <!-- <input type="date" id="date"> -->
+            <button onclick="calculate()" class="btn">Start Timer</button>
+        </div>
+
+        <div class="ans">
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            now = new Date();
+            then = new Date(now);
+            then.setDate(now.getDate() + 1);
+            then.setHours(13,0,0,0);
+            
+
+            difference = then.getTime() - now.getTime();
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('result').innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            setInterval(calculate, 1000);
+        }
+        // calculate();
+    </script>
+</body>
+
+</html>

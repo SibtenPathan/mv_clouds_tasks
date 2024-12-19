@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <link rel="stylesheet" href="task6.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header"><h1 class="header">Upload a CSV file here</h1></div>
+        <div class="upload">
+            <input type="file" name="file" id="file" accept=".csv">
+        </div>
+    </div>
+
+    <div class="display">
+        <table>
+
+        </table>
+    </div>
+
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    
+    <script>
+                const fs  = require('fs');
+            const name = document.getElementById("file");
+            name.addEventListener("change",function(){
+                const file = name.files[0];
+                handleFile(file)
+            })
+            
+            function handleFile(file){
+                data = fs.readFile(file);
+                console.log(data);
+            }
+    </script>
+</body>
+</html>
