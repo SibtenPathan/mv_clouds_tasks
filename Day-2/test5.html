@@ -11,11 +11,30 @@
     <style>
         
 
+<<<<<<< HEAD
+=======
+        #main {
+            /* width: 500px; */
+            margin-top: -40px;
+        }
+
+        #radio {
+            margin-left: 5px;
+        }
+
+        #gender {
+            padding-right: 7px;
+        }
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
     <!-- <div id="main">
+=======
+    <div id="main">
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
         <form id="registrationForm">
             <label for="username">Username: </label>
             <input type="text" id="username" required>
@@ -91,8 +110,11 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
@@ -114,9 +136,16 @@
         document.getElementById('registrationForm').addEventListener('submit', formSubmit);
 
         function formSubmit(e) {
+<<<<<<< HEAD
 
             e.preventDefault();
 
+=======
+            // Prevent the default form submission behavior
+            e.preventDefault();
+
+            // Get form values
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             let gender = '';
@@ -125,18 +154,32 @@
             } else if (document.getElementById('female').checked) {
                 gender = 'female';
             }
+<<<<<<< HEAD
             const selectedOption = document.getElementById('menu').value;
 
+=======
+            const selectedOption = document.getElementById('menu').value; // Get the selected option from the dropdown
+
+            // Log data to verify
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             console.log('Username:', username);
             console.log('Password:', password);
             console.log('Gender:', gender);
             console.log('Selected Option:', selectedOption);
 
+<<<<<<< HEAD
+=======
+            // Send data to Firebase
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             sendMessage(username, password, gender, selectedOption);
         }
 
         function sendMessage(username, password, gender, selectedOption) {
+<<<<<<< HEAD
 
+=======
+            // Write user data to Firebase
+>>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             set(ref(database, 'users/' + username), {
                 username: username,
                 password: password,
