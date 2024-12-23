@@ -9,61 +9,11 @@
     <link rel="stylesheet" href="task1.css">
     <script src="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous"></script>
     <style>
-        
-
-<<<<<<< HEAD
-=======
-        #main {
-            /* width: 500px; */
-            margin-top: -40px;
-        }
-
-        #radio {
-            margin-left: 5px;
-        }
-
-        #gender {
-            padding-right: 7px;
-        }
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
+        /* Add any necessary styling here */
     </style>
 </head>
 
 <body>
-<<<<<<< HEAD
-    <!-- <div id="main">
-=======
-    <div id="main">
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
-        <form id="registrationForm">
-            <label for="username">Username: </label>
-            <input type="text" id="username" required>
-            <br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <br>
-
-            <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-            <br>
-
-            <label for="menu">Dropdown Menu: </label>
-            <select id="menu">
-                <option value="opt1">opt1</option>
-                <option value="opt2">opt2</option>
-                <option value="opt3">opt3</option>
-            </select>
-            <br>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div> -->
-
-
     <div class="container">
         <div class="form">
             <form action="" id="registrationForm">
@@ -78,8 +28,8 @@
                 <div class="name center">
                     <input type="text" placeholder="Enter your username*" id="username" required>
                 </div>
-                <div class="email center mt">
-                    <input type="email" placeholder="Enter your password*" id="password" required>
+                <div class="password center mt">
+                    <input type="password" placeholder="Enter your password*" id="password" required>
                 </div>
 
                 <div class="header">
@@ -89,7 +39,7 @@
                     <select name="intrest" id="menu">
                         <option value="Fishing">Fishing</option>
                         <option value="Singing">Singing</option>
-                        <option value="sports">sports</option>
+                        <option value="sports">Sports</option>
                     </select>
                 </div>
 
@@ -102,7 +52,6 @@
                 </div>
 
                 <div class="center mt">
-
                     <button type="submit">Submit</button>
                 </div>
 
@@ -110,11 +59,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
@@ -136,16 +80,8 @@
         document.getElementById('registrationForm').addEventListener('submit', formSubmit);
 
         function formSubmit(e) {
-<<<<<<< HEAD
-
             e.preventDefault();
 
-=======
-            // Prevent the default form submission behavior
-            e.preventDefault();
-
-            // Get form values
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             let gender = '';
@@ -154,32 +90,43 @@
             } else if (document.getElementById('female').checked) {
                 gender = 'female';
             }
-<<<<<<< HEAD
             const selectedOption = document.getElementById('menu').value;
 
-=======
-            const selectedOption = document.getElementById('menu').value; // Get the selected option from the dropdown
+            // Validation checks using regex
+            if (!validateUsername(username)) {
+                alert('Invalid Username. It should be between 3 to 15 characters and contain only alphanumeric characters.');
+                return;
+            }
 
-            // Log data to verify
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
+            if (!validatePassword(password)) {
+                alert('Invalid Password. It should be at least 6 characters long, and contain at least one uppercase letter, one lowercase letter, and one number.');
+                return;
+            }
+
+            if (!gender) {
+                alert('Please select a gender.');
+                return;
+            }
+
             console.log('Username:', username);
             console.log('Password:', password);
             console.log('Gender:', gender);
             console.log('Selected Option:', selectedOption);
 
-<<<<<<< HEAD
-=======
-            // Send data to Firebase
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
             sendMessage(username, password, gender, selectedOption);
         }
 
-        function sendMessage(username, password, gender, selectedOption) {
-<<<<<<< HEAD
+        function validateUsername(username) {
+            const usernameRegex = /^[a-zA-Z0-9]{3,15}$/;
+            return usernameRegex.test(username);
+        }
 
-=======
-            // Write user data to Firebase
->>>>>>> ad44d8d64699b8a21a6d70bf361bb71021135dfc
+        function validatePassword(password) {
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+            return passwordRegex.test(password);
+        }
+
+        function sendMessage(username, password, gender, selectedOption) {
             set(ref(database, 'users/' + username), {
                 username: username,
                 password: password,

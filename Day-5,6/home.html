@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <script src="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous"></script>
+    
+    </head>
+<body>
+    <nav>
+        <div class="navbar bg-base-100">
+            <a class="btn btn-ghost text-4xl text-pink-800">meesho</a>
+            <div class="form-control mx-6">
+                <input type="text" placeholder="Try Saree or Kurti" class="input input-bordered w-80" />
+            </div>
+
+            <div class="space-x-10 ml-20 text-lg">
+                <div class="pr-8 border-r-2">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <a class="link link-neutral no-underline">Download App</a>
+                </div>
+                <div class="pr-8 border-r-2">
+                    <a class="link link-neutral no-underline">Become a Supplier</a>
+                </div>
+                <div class="pr-8 border-r-2">
+                    <a class="link link-neutral no-underline">Newsroom</a>
+                </div>
+            </div>
+
+            <div class="space-x-10 ml-20 text-2xl">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="carousel w-4/5 mx-36 mt-20 rounded-2xl">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img
+            src="Capture1.PNG"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img
+            src="Capture2.PNG"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img
+            src="Capture3.PNG"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img
+            src="Capture4.PNG"
+            class="w-full" />
+          <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+      <div class="divide"></div>
+
+      
+      <div class="flex">
+        <div class="bg-green-400 w-1/4 p-4">
+            <div class="p-2 text-left text-2xl font-bold">
+                <p>Clothes</p>
+            </div>
+            <div>
+                <select class="select select-bordered w-full max-w-xs">
+                    <option disabled selected>Sort by: </option>
+                    <option>Price (Low to High)</option>
+                    <option>Price (High to Low)</option>
+                  </select>
+            </div>
+            <div class="p-2 text-left text-lg font-bold">
+                <p>Gender</p>
+            </div>
+          </div>
+          <div>
+            <h1>hello</h1>
+          </div>
+      </div>
+</body>
+</html>

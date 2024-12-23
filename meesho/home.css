@@ -1,0 +1,220 @@
+.logo {
+    width: 10rem;
+    padding-left: 0.6rem;
+    padding-top: 0.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.search {
+    padding-top: 0.5rem;
+    margin-left: 2rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    /* margin-top:0.5rem; */
+}
+
+.search-box {
+    height: 2rem;
+    width: 22rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 0px;
+    display: inline;
+    margin-right: 5rem;
+}
+
+.search-logo {
+    height: 2rem;
+    font-size: 1.5rem;
+    margin-right: 0;
+    padding-left: 0.5rem;
+    color: gray;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.nav-link {
+    margin-left: 2rem;
+    font-size: 1rem;
+    color: gray;
+    border-left: 2px solid gray;
+    padding-left: 1.5rem;
+}
+
+.nav-link>i {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.hero {
+    width: 85rem;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.left {
+    background-color: bisque;
+    width: 40%;
+    font-size: 3rem;
+}
+
+.hero-left-text {
+    margin-left: 2rem;
+}
+
+.hero-left-nav {
+    background-color: white;
+}
+
+.fd {
+    font-size: 1.5rem;
+    margin-left: 4rem;
+}
+
+.fd>p {
+    display: inline;
+}
+
+.cod {
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.download-btn>div>img {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.download-btn>p {
+    margin: 0;
+    padding: 0.5rem;
+    display: inline;
+}
+
+.download-btn {
+    font-size: 1.5rem;
+    background-color: #9F2089;
+    width: 22rem;
+    color: white;
+    text-align: center;
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+.catagory-image-hero-1 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-image: url('https://media.istockphoto.com/id/1180453857/photo/blur-orange-texture-background.jpg?s=612x612&w=0&k=20&c=bpaBJRK2hep0m7JTCCs29MIHeo4jOFDgp9QH30cnRDk=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.hero-1-img-1 {
+    height: auto;
+    padding: 2rem;
+    margin-left: 1rem;
+    width: 20rem;
+}
+
+.hero-1-img-2 {
+    height: auto;
+    padding: 0rem 1rem 1rem 1rem;
+    width: 18rem;
+}
+
+.catagory-image-hero-1>div>p {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.catagory-image-hero-2 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-image: url('https://media.istockphoto.com/id/1180453857/photo/blur-orange-texture-background.jpg?s=612x612&w=0&k=20&c=bpaBJRK2hep0m7JTCCs29MIHeo4jOFDgp9QH30cnRDk=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.catagory-image-hero-2-p {
+    font-size: 2rem;
+    color: white;
+    padding: 0rem;
+    margin-top: 10rem;
+    margin-left: 5rem;
+}
+
+.hero-2-img-1 {
+    margin-left: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4em;
+}
+
+.catagory-image-hero-2-img {
+    margin-left: 5rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    padding: 1rem;
+    margin-top: -4rem;
+}
+
+.sidebar {
+    height: 100%;
+    width: 21rem;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* background-color: #111; */
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: white;
+    /* margin-top: 38rem; */
+}
+
+.sort > select{
+    width: 18rem;
+    height: 2rem;
+    margin-left:0.8rem;
+    border: 0.1rem solid gray;
+    border-radius:5px;
+    margin-bottom: 0.8rem;
+}
+
+.gender > label {
+    font-size: 1.5rem;
+    margin-left:0.8rem;
+    color: black;
+}
+
+.gender > button {
+    margin-left: 0.8rem;
+    margin-top:0.8rem;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.gender > button:hover{
+    border: 2px solid #9F2089;
+    background-color: pink;
+}

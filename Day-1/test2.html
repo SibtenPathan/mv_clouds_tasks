@@ -13,6 +13,95 @@
             <div class="header">
                 <p>Create Account</p>
             </div>
+
+            <div class="name flex ml-mt">
+                <div class="fname">
+                    <label for="fname">First Name*</label>
+                    <br>
+                    <input type="text" id="fname" placeholder="Enter your First name" required>
+                </div>
+                <div class="lname ml">
+                    <label for="lname">Last Name</label>
+                    <br>
+                    <input type="text" id="lname" placeholder="Enter your Last name">
+                </div>
+            </div>
+
+            <div class="email flex ml-mt">
+                <div class="email-inner">
+                    <label for="email">Email*</label>
+                    <br>
+                    <input class="single" type="text" id="fname" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="pass flex ml-mt">
+                <div class="password">
+                    <label for="password">Password*</label>
+                    <br>
+                    <input type="text" id="password" placeholder="Enter your Password" required>
+                </div>
+                <div class="cpassword ml">
+                    <label for="cpassword">Confirm Password*</label>
+                    <br>
+                    <input type="text" id="cpassword" placeholder="Re-enter password" required>
+                </div>
+            </div>
+
+            <div class="buttons flex ml-mt">
+                <div class="gender">
+                    <label for="gender">Gender:</label>
+                    <br>
+                    <input name="gender" type="radio" id="male">Male
+                    <input type="radio" name="gender" id="female">Female
+                </div>
+                <div class="hobbies ml">
+                    <label for="hobbies">Hobbies</label>
+                    <br>
+                    <input type="checkbox" id="music">Music
+                    <input type="checkbox" id="sports">Sports
+                    <input type="checkbox" id="travel">Travel
+                    <input type="checkbox" id="movies">Movies
+                </div>
+            </div>
+
+            <div class="income flex ml-mt">
+                <div class="source">
+                    <label for="source">Source of Income</label>
+                    <br>
+                    <input type="text" value="Employed">
+                </div>
+                <div class="digits ml">
+                    <label for="digits">Income</label>
+                    <br>
+                    <input type="range" min="20">
+                </div>
+            </div>
+
+            <div class="file flex ml-mt">
+                <div class="file-inner">
+                    <label for="file">Upload Profile Picture</label>
+                    <br>
+                    <input type="file" id="file">
+                </div>
+                <div class="age ml">
+                    <label for="age">Age</label>
+                    <br>
+                    <input type="number" id="age" value="18">
+                </div>
+            </div>
+
+            <div class="bio flex ml-mt">
+                <div class="bio-inner">
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" id="user-bio" cols="50" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="btn">
+                <button type="submit">Create</button>
+            </div>
+
         </div>
     </div>
 </body>

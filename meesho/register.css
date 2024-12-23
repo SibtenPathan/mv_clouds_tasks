@@ -1,0 +1,74 @@
+.logo {
+    width: 10rem;
+    padding-left: 0.6rem;
+    padding-top: 0.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.search {
+    padding-top: 0.5rem;
+    margin-left: 2rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    /* margin-top:0.5rem; */
+}
+
+.search-box {
+    height: 2rem;
+    width: 22rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 0px;
+    display: inline;
+    margin-right: 5rem;
+}
+
+.search-logo {
+    height: 2rem;
+    font-size: 1.5rem;
+    margin-right: 0;
+    padding-left: 0.5rem;
+    color: gray;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.nav-link {
+    margin-left: 2rem;
+    font-size: 1rem;
+    color: gray;
+    border-left: 2px solid gray;
+    padding-left: 1.5rem;
+}
+
+.nav-link>i {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.form-outer{
+    padding-left: 30%;
+    padding-top: 5rem;
+    background-color: pink;
+}
+.image > img{
+    width: 30rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 0;
+}
+
+.form{
+    background-color: white;
+    margin-top:-2.2rem;
+}
+
+.form > p{
+    margin-left: 3rem;
+    font-size: 2rem;
+}

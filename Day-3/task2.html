@@ -19,6 +19,8 @@
         function count() {
         x = document.getElementById("number").value;
             ans = String(x).length;
+        if (String(x).includes('.'))
+        ans-=1;
         console.log(ans);
         document.getElementById("result").innerHTML = "number of Digits: ".concat(ans);
         }
