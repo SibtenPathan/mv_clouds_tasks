@@ -11,31 +11,34 @@
 </head>
 
 <body>
-    <div class="flex">
+    <nav class="navbar">
         <div class="logo">
-            <img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="">
+            <a href="#">meesho</a>
         </div>
         <div class="search">
-            <i class="fa-solid fa-magnifying-glass search-logo"></i>
-            <input class="search-box" type="text" placeholder="Try Saree or Kurti">
+            <input type="text" placeholder="Try Saree or Kurti" />
         </div>
-        <div class="nav-link">
-            <p>Download App</p>
+
+        <div class="nav-links">
+            <div class="nav-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a href="#">Download App</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Become a Supplier</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Newsroom</a>
+            </div>
         </div>
-        <div class="nav-link">
-            <p>Become a Supplier</p>
-        </div>
-        <div class="nav-link">
-            <p>Newsroom</p>
-        </div>
-        <div class="nav-link">
+
+        <div class="icons">
             <i class="fa-regular fa-user"></i>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-        <div class="nav-link">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-    </div>
+    </nav>
     <hr>
+
     <div class="hero flex">
         <div class="left">
             <div class="hero-left-text">
@@ -84,8 +87,7 @@
     </div>
 
     <div class="catagory-image-hero-1 flex">
-        <div><img class="hero-1-img-1" src="https://images.meesho.com/images/marketing/1701835320853_400.webp" alt="">
-        </div>
+        <div><img class="hero-1-img-1" src="https://images.meesho.com/images/marketing/1701835320853_400.webp" alt=""></div>
         <div>
             <p>Be Fashion Forword</p>
             <img class="hero-1-img-2" src="https://images.meesho.com/images/marketing/1692191045019_300.webp" alt="">
@@ -104,7 +106,7 @@
     </div>
     <div class="catagory-image-hero-2 flex">
         <div class="catagory-image-hero-2-p">
-            <p>Essentials<br>View All</p>
+            <p>New Styles<br>View All</p>
         </div>
         <div class="catagory-image-hero-2-img">
             <img class="hero-2-img-1" src="https://images.meesho.com/images/marketing/1690977773436_200.webp" alt="">
@@ -120,23 +122,112 @@
             <div class="sort">
                 <select name="sort" id="sort">
                     <option disabled selected>Sort By:</option>
-                    <option value="lth">Sort By: Price (Low to High)</option>
-                    <option value="htl">Sort By: Price (High to Loq)</option>
+                    <option value="lth">Price (Low to High)</option>
+                    <option value="htl">Price (High to Low)</option>
                 </select>
             </div>
             <div class="gender">
                 <label for="gender">Gender</label><br>
-                <button>Men</button>
-                <button>Boys</button>
-                <button>Girls</button>
-                <button>Women</button>
+                <button onclick="filterByCategory('Men')">Men</button>
+                <button onclick="filterByCategory('Boys')">Boys</button>
+                <button onclick="filterByCategory('Girls')">Girls</button>
+                <button onclick="filterByCategory('Women')">Women</button>
             </div>
         </div>
-        <div class="cards">
-            
+        <div class="cards" id="product-cards">
+            <!-- Product cards display -->
         </div>
     </div>
-    
+
+    <script>
+        
+        const products = [
+            {
+                "name": "Kurti",
+                "price": "Rs.799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Kurti",
+                "price": "Rs.799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Kurti",
+                "price": "Rs.799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Stylish_Men_Shirt",
+                "price": "Rs.599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            },
+            {
+                "name": "Stylish_Mens_Shirt",
+                "price": "Rs.599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            },
+            {
+                "name": "Stylish_Mens_Shirt",
+                "price": "Rs.599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            }
+        ];
+ 
+        const productCardsContainer = document.getElementById('product-cards');
+
+        function displayProducts(filteredProducts) {
+            productCardsContainer.innerHTML = '';
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <p class="product-name">${product.name}</p>
+                    <p class="product-price">${product.price}<button onclick="addToCart('${product.name}')">add to cart</button></p>
+                    <p class="product-rating">${product.rating}<i class="fa-solid fa-star"></i></p>
+                    <p class="product-reviews">${product.reviews}</p>
+                `;
+                productCardsContainer.appendChild(card);
+            });
+        }
+
+        displayProducts(products);
+
+        function addToCart(name){
+            cart = JSON.parse(localStorage.getItem('cartItems')) || {};
+            if(!cart.hasOwnProperty(name)){
+                cart[name] = 1
+            } else {
+                cart[name]+=1;
+            }
+            localStorage.setItem('cartItems',JSON.stringify(cart));
+        }
+
+        // function filterByCategory(category) {
+        //     const filteredProducts = products.filter(product => product.category === category);
+        //     displayProducts(filteredProducts);
+        // }
+
+    </script>
 </body>
 
 </html>

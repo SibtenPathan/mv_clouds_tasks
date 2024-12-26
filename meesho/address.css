@@ -1,0 +1,35 @@
+/* Logo */
+.logo > a {
+    font-size: 3rem;
+    color: #9f2089;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10rem;
+}
+
+/* Flex container */
+.flex {
+    display: flex;
+}
+
+/* Text Center */
+.text-center {
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.ml {
+    margin-left: 10rem;
+}
+
+.blue {
+    background-color: rgb(155, 155, 252);
+    color: white;
+}

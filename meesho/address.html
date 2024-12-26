@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <nav class="flex">
+        <div class="logo">
+            <a href="home.html">meesho</a>
+        </div>
+        <div class="timeline flex">
+            <div class="text-center ml blue">
+                <p>cart</p>
+            </div>
+            <div class="text-center ml blue">
+                <p>Address</p>
+                <!-- <p>Address</p> -->
+
+            </div>
+            <div class="text-center ml">
+                <p>Payment</p>
+                <!-- <p>Payment</p> -->
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <div class="hero flex">
+        <div class="left add-left">
+
+            <div class="flex">
+                <div class="da">
+                    <p>Delivery Address</p>
+                </div>
+                <div class="edit-btn"><button onclick="changeAddress()">Edit</button></div>
+            </div>
+            <div class="add-div">
+                <p id="name"></p>
+                <p id="address"></p>
+                <p id="phone"></p>
+                <a><button>Deliver to this Address</button></a>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="price-section" id="total">
+                <p id="p1">Price Details</p>
+                <div class="flex">
+                    <p id="p2">Order Total</p>
+                    <p id="p3"></p>
+                </div>
+                <!-- <a href="address.html"><button class="contAdd">Continue</button></a> -->
+                <img src="https://images.meesho.com/images/marketing/1588578650850.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        x = JSON.parse(localStorage.getItem('userInfo'));
+        document.getElementById('name').innerHTML = x['name'];
+        document.getElementById('address').innerHTML = x['address'];
+        document.getElementById('phone').innerHTML = x['phone'];
+
+
+        total = JSON.parse(localStorage.getItem('total'));
+        document.getElementById('p3').innerHTML = total;
+
+
+        function changeAddress(){
+           
+        }
+
+    </script>
+</body>
+
+</html>

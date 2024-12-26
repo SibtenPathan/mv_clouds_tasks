@@ -1,0 +1,236 @@
+/* Logo */
+.logo > a {
+    font-size: 3rem;
+    color: #9f2089;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10rem;
+}
+
+/* Flex container */
+.flex {
+    display: flex;
+}
+
+/* Text Center */
+.text-center {
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.ml {
+    margin-left: 10rem;
+}
+
+.blue {
+    background-color: rgb(155, 155, 252);
+    color: white;
+}
+
+.hero {
+    margin: auto;
+    width: 60%;
+    margin-top: 3rem;
+}
+
+/* Left section heading */
+.da > p {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.right-p {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Container for all cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Card layout */
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+/* Image container */
+.card-image-container {
+    height: 58px;
+    width: 58px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Details section */
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #9F2089;
+}
+
+.product-discounted-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.product-discount {
+    font-size: 1rem;
+    color: #f05d23;
+}
+
+.product-size,
+.product-quantity {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edit-button,
+.remove-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button {
+    background-color: #9F2089;
+    color: white;
+}
+
+.remove-button {
+    background-color: #f05d23;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #87186e;
+}
+
+.remove-button:hover {
+    background-color: #c0481b;
+}
+
+#p1, #p2, #p3{
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+#p3{
+    margin-left: 3rem;
+}
+
+.right{
+    margin-left: 3rem;
+}
+
+.contAdd{
+    background-color: #9F2089;
+    color: white;
+    width:15rem;
+    height:2.5rem;
+    font-size: larger;
+    border: 0;
+    border-radius:0.5rem;
+}
+
+.price-section > img {
+    height: 6rem;
+    margin-top: 3rem;
+}
+
+/* address.html */
+
+#name{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.add-div > a > button {
+    background-color: #9F2089;
+    color: white;
+    width:25rem;
+    height:3rem;
+    border-radius: 0.5rem;
+    border:0;
+    font-size: 1rem;
+}
+
+.add-left{
+    background-color: #e7eeff;
+    padding:2rem;
+}
+
+.edit-btn > button{
+    background-color: transparent;
+    color: #9F2089;
+    font-weight:600;
+    border:0;
+    font-size:1.5rem;
+    margin-left:12rem;
+    margin-top: -2rem;
+}

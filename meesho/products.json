@@ -1,0 +1,17 @@
+[
+    {
+      "image": "https://images.meesho.com/images/products/367648126/wgxv5_400.webp",
+      "name": "Product 1",
+      "price": "₹500",
+      "rating": "4.5",
+      "reviews": "200 reviews"
+    },
+    {
+      "image": "https://images.meesho.com/images/products/367648126/wgxv5_400.webp",
+      "name": "Product 2",
+      "price": "₹1000",
+      "rating": "4.2",
+      "reviews": "150 reviews"
+    }
+  ]
+  

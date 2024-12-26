@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">meesho</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Try Saree or Kurti" />
+        </div>
+
+        <div class="nav-links">
+            <div class="nav-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a href="#">Download App</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Become a Supplier</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Newsroom</a>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </nav>
+
+    <hr>
+
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-img">
+                <img src="https://images.meesho.com/images/marketing/1661417516766.webp" alt="Login Image">
+            </div>
+            <div class="login-title">
+                <p>Login to your Account</p>
+            </div>
+            <div class="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <button class="login-btn" onclick="validate()">Continue</button>
+                <p class="fp"><a href="forgotpassword.html">forgot Password?</a></p>
+            </div>
+            <div class="terms">
+                <p>By continuing, you agree to Meesho’s Terms & Conditions and Privacy Policy</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function validate(){
+            uemail = document.getElementById('email').value;
+            upassword = document.getElementById('password').value;
+            data = JSON.parse(localStorage.getItem('userInfo'))
+            if(uemail == data.email && upassword == data.password){
+                window.location.replace('home.html');
+            } else {
+                alert('invalid credentials')
+            }
+        }
+    </script>
+</body>
+
+</html>

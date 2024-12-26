@@ -1,46 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <script src="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous"></script>
+    <link href="https://kit.fontawesome.com/0ccbc3855e.js" crossorigin="anonymous">
     <link rel="stylesheet" href="register.css">
 </head>
+
 <body>
-    <div class="flex nav">
+    <nav class="navbar">
         <div class="logo">
-            <img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="">
+            <a href="#">meesho</a>
         </div>
         <div class="search">
-            <i class="fa-solid fa-magnifying-glass search-logo"></i>
-            <input class="search-box" type="text" placeholder="Try Saree or Kurti">
+            <input type="text" placeholder="Try Saree or Kurti" />
         </div>
-        <div class="nav-link">
-            <p>Download App</p>
+
+        <div class="nav-links">
+            <div class="nav-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a href="#">Download App</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Become a Supplier</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">Newsroom</a>
+            </div>
         </div>
-        <div class="nav-link">
-            <p>Become a Supplier</p>
-        </div>
-        <div class="nav-link">
-            <p>Newsroom</p>
-        </div>
-        <div class="nav-link">
+
+        <div class="icons">
             <i class="fa-regular fa-user"></i>
-        </div>
-        <div class="nav-link">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-    </div>
+    </nav>
+
     <hr>
-    <div class="form-outer">
-        <div class="image">
-            <img src="https://images.meesho.com/images/marketing/1661417516766.webp" alt="">
+
+    <section class="register-section">
+        <div class="register-container">
+            <div class="register-img">
+                <img src="https://images.meesho.com/images/marketing/1661417516766.webp" alt="Register Image">
+            </div>
+            <div class="register-title">
+                <p>Sign Up to view your Profile</p>
+            </div>
+            <div class="register-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="input-group">
+                    <label for="address">address</label>
+                    <textarea name="address" id="address" cols="80" rows="5"></textarea>
+                </div>
+                <button class="register-btn" onclick="register()">Continue</button>
+            </div>
+            <div class="terms">
+                <p>By continuing, you agree to Meesho’s Terms & Conditions and Privacy Policy</p>
+            </div>
         </div>
-        <div class="form">
-            <p>Sign Up to view your Profile</p>
-        </div>
-    </div>
+    </section>
+
+
+    <script>
+
+        function register() {
+            uname = document.getElementById('name').value;
+            uemail = document.getElementById('email').value;
+            upassword = document.getElementById('password').value;
+            uphone = document.getElementById('phone').value;
+            uaddress = document.getElementById('address').value;
+
+            valid = true;
+
+            var isValidEmail = validate_email(uemail)
+            var isValidPhone = validate_phone(uphone)
+            var isValidPassword = validate_password(upassword)
+
+            if (!(isValidEmail && isValidPassword && isValidPhone)) {
+                alert('please enter valid values')
+                return
+            }
+
+            const user = { name: uname, email: uemail, password: upassword, phone: uphone, address: uaddress }
+            console.log(user)
+
+            localStorage.setItem("userInfo",JSON.stringify(user))
+            window.location.replace('login.html');
+        }
+
+        function validate_email(x) {
+            var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var isValidEmail = re.test(x);
+            console.log("email" + isValidEmail)
+            return isValidEmail;
+        }
+
+        function validate_phone(x) {
+            var re = /^\d{10}$/;
+            var isValidPhone = re.test(x);
+            console.log("phone" + isValidPhone)
+            return isValidPhone;
+        }
+
+        function validate_password(x) {
+            var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+            var isValidPassword = re.test(x);
+            console.log("pass" + isValidPassword)
+            return isValidPassword;
+        }
+    </script>
 </body>
+
 </html>

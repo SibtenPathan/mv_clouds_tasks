@@ -60,13 +60,13 @@ h1, h2, h3, p {
     gap: 1rem;
 }
 
-/* Register Section Styles */
-.register-section {
+/* Login Section Styles */
+.login-section {
     background-color: #f9f3f3;
     padding: 4rem 0;
 }
 
-.register-container {
+.login-container {
     width: 50%;
     margin: 0 auto;
     background-color: #fff;
@@ -75,19 +75,19 @@ h1, h2, h3, p {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.register-img img {
+.login-img img {
     width: 100%;
     height: auto;
 }
 
-.register-title {
+.login-title {
     text-align: center;
     padding: 1.5rem 0;
     font-size: 1.8rem;
     color: #333;
 }
 
-.register-form {
+.login-form {
     padding: 2rem;
 }
 
@@ -110,7 +110,7 @@ h1, h2, h3, p {
     font-size: 1rem;
 }
 
-.register-btn {
+.login-btn {
     width: 100%;
     padding: 1rem;
     background-color: #9f2089;
@@ -122,7 +122,7 @@ h1, h2, h3, p {
     transition: background-color 0.3s ease;
 }
 
-.register-btn:hover {
+.login-btn:hover {
     background-color: #720f6f;
 }
 
@@ -131,6 +131,12 @@ h1, h2, h3, p {
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #777;
+}
+
+.fp{
+    text-decoration: underline;
+    color: purple;
+    margin-top:1rem;
 }
 
 /* Responsive Styles */
@@ -154,11 +160,11 @@ h1, h2, h3, p {
         padding: 0.5rem;
     }
 
-    .register-container {
+    .login-container {
         width: 90%;
     }
 
-    .register-title {
+    .login-title {
         font-size: 1.6rem;
     }
 
@@ -166,7 +172,7 @@ h1, h2, h3, p {
         font-size: 1rem;
     }
 
-    .register-btn {
+    .login-btn {
         font-size: 1.1rem;
     }
 
@@ -184,7 +190,7 @@ h1, h2, h3, p {
         width: 200px;
     }
 
-    .register-title {
+    .login-title {
         font-size: 1.4rem;
     }
 
@@ -192,7 +198,7 @@ h1, h2, h3, p {
         font-size: 1rem;
     }
 
-    .register-btn {
+    .login-btn {
         font-size: 1rem;
     }
 }

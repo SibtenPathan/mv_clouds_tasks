@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <nav class="flex">
+        <div class="logo">
+            <a href="home.html">meesho</a>
+        </div>
+        <div class="timeline flex">
+            <div class="text-center ml blue">
+                <p>cart</p>
+                <!-- <p>cart</p> -->
+            </div>
+            <div class="text-center ml">
+                <p>Address</p>
+                <!-- <p>Address</p> -->
+
+            </div>
+            <div class="text-center ml">
+                <p>Payment</p>
+                <!-- <p>Payment</p> -->
+            </div>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="hero flex">
+        <div class="left">
+            <p>Product Details</p>
+            <div class="cards" id="product-cards">
+                <!-- Product cards display -->
+            </div>
+        </div>
+        <div class="right">
+            <div class="price-section" id="total">
+                <p id="p1"></p>
+                <div class="flex">
+                    <p id="p2">Order Total</p>
+                    <p id="p3"></p>
+                </div>
+                <a href="address.html"><button class="contAdd" onclick="addTotal()">Continue</button></a>
+                <img src="https://images.meesho.com/images/marketing/1588578650850.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const products = [
+            {
+                "name": "Kurti",
+                "price": "799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Kurti 1",
+                "price": "799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Kurti 1",
+                "price": "799",
+                "rating": "4.5",
+                "reviews": "1,234 reviews",
+                "image": "https://images.meesho.com/images/products/191005346/mocgn_400.webp",
+                "category": "Women"
+            },
+            {
+                "name": "Stylish_Men_Shirt",
+                "price": "599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            },
+            {
+                "name": "Stylish_Mens_Shirt 1",
+                "price": "599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            },
+            {
+                "name": "Stylish_Mens_Shirt 1",
+                "price": "599",
+                "rating": "4.6",
+                "reviews": "945 reviews",
+                "image": "https://images.meesho.com/images/products/349919589/xqrge_400.webp",
+                "category": "Men"
+            }
+        ];
+
+        const productCardsContainer = document.getElementById('product-cards');
+        function displayProducts(filteredProducts) {
+            productCardsContainer.innerHTML = '';
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+            <div class="card-image-container">
+                <img src="${product.image}" alt="${product.name}" class="product-img">
+            </div>
+            <div class="card-details">
+                <div class="product-info">
+                    <span class="product-name">${product.name}</span>
+                    <div class="product-price-container">
+                        <p class="product-price">${product.price}</p>
+                        <p class="product-discount">10% Off</p>
+                    </div>
+                    <div class="flex">
+                        <button class="edit-button" onclick="increment('${product.name}')">+</button>
+                    <button class="edit-button" onclick="decrement('${product.name}')">-</button>
+                        </div>
+                    <p class="product-quantity">Qty: ${product.quantity}</p>
+                </div>
+                <div class="card-actions">
+                    <button class="remove-button" onclick="deleteItem('${product.name}')">REMOVE</button>
+                </div>
+            </div>
+        `;
+                productCardsContainer.appendChild(card);
+            });
+        }
+
+
+
+        x = JSON.parse(localStorage.getItem('cartItems'));
+        fp = []
+        for (i = 0; i < Object.keys(products).length; i++) {
+            name = products[i].name;
+            if (x.hasOwnProperty(name)) {
+                item = products[i];
+                item['quantity'] = x[name];
+                if (!fp.includes(item)) {
+                    fp.push(item)
+                }
+            }
+        }
+
+        total=0;
+        fp.forEach(p => {
+            total += (parseInt(p.price))*p.quantity;
+        })
+
+        document.getElementById('p1').innerHTML = "Price Details (" +fp.length+" Items)"; 
+        document.getElementById('p3').innerHTML = "Rs."+total; 
+
+        function addTotal(){
+            localStorage.setItem("total", total)
+        }
+
+
+        console.log(fp)
+        displayProducts(fp)
+
+
+        function increment(name) {
+            x = JSON.parse(localStorage.getItem('cartItems'));
+            x[name] += 1;
+            y = JSON.stringify(x)
+            localStorage.setItem('cartItems', y)
+            location.reload();
+        }
+
+        function decrement(name) {
+            x = JSON.parse(localStorage.getItem('cartItems'));
+            if (x[name] > 1) {
+                x[name] -= 1;
+                y = JSON.stringify(x)
+                localStorage.setItem('cartItems', y)
+                location.reload();
+            } else {
+                jObj = JSON.parse(localStorage.getItem('cartItems'));
+            jObj = Object.fromEntries(
+                Object.entries(jObj).
+                    filter(([key, value]) =>
+                        key !== name)
+            );
+            y = JSON.stringify(jObj)
+            localStorage.setItem('cartItems', y)
+            location.reload();
+            }
+        }
+
+        function deleteItem(name) {
+            jObj = JSON.parse(localStorage.getItem('cartItems'));
+            jObj = Object.fromEntries(
+                Object.entries(jObj).
+                    filter(([key, value]) =>
+                        key !== name)
+            );
+            y = JSON.stringify(jObj)
+            localStorage.setItem('cartItems', y)
+            location.reload();
+        }
+
+    </script>
+</body>
+
+</html>
